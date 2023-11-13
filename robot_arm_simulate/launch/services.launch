@@ -1,0 +1,7 @@
+<launch>
+
+    <node pkg="robot_arm_simulate" type="getting_tf_parameters.py" name="tf_parameters_service" output="screen"/>
+    <node pkg="robot_arm_simulate" type="sequence_planning.py" name="sequence_planning" output="screen"/>
+    <node pkg="robot_arm_simulate" type="ik_manipulator.py" name="inverse_kinematics" output="screen"/>
+
+</launch>

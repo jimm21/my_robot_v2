@@ -1,0 +1,32 @@
+<launch>
+
+    <rosparam command="load" file="$(find robot_arm_urdf)/config/joint_names_robot_arm_urdf.yaml" />
+
+    <!-- Launch Your robot arms launch file which loads the robot in Gazebo and spawns the controllers -->
+    <include file = "$(find robot_arm_urdf)/launch/arm_urdf.launch" />
+
+    <include file="$(find robot_arm_moveit_config)/launch/planning_context.launch">
+        <arg name="load_robot_description" value="true"/>
+    </include>
+
+    <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher">
+        <param  name="/use_gui" value="false"/>
+        <rosparam param="/source_list">[/joint_states]</rosparam>
+    </node>
+
+    <!-- Launch Moveit Move Group Node -->
+    <include file = "$(find robot_arm_moveit_config)/launch/move_group.launch">
+        <arg name="publish_monitored_planning_scene" value="true"/>
+    </include>
+
+    <!-- Run Rviz and load the default configuration to see the state of the move_group node -->
+    <arg name="use_rviz" default="true" />
+    <include file="$(find robot_arm_moveit_config)/launch/moveit_rviz.launch" if="$(arg use_rviz)">
+        <!-- <arg name="rviz_config" value="$(find urdf_manipulator_moveit_config)/launch/moveit.rviz"/> -->
+        <arg name="rviz_config" value="$(find robot_arm_simulate)/config/rviz_visualization.rviz"/>
+    </include>
+
+    <!-- Launch Your robot arms launch file which loads the robot in Gazebo and spawns the controllers -->
+    <include file = "$(find robot_arm_simulate)/launch/services.launch"/>
+
+</launch>

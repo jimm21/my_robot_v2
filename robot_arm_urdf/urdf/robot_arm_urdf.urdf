@@ -1,0 +1,330 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="robot_arm_urdf">
+
+  <link name="world"/>
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="0.033122 -2.0902E-07 0.033132"
+        rpy="0 0 0" />
+      <mass
+        value="3.555" />
+      <inertia
+        ixx="0.027614"
+        ixy="1.0148E-10"
+        ixz="-0.00058824"
+        iyy="0.01279"
+        iyz="7.4452E-09"
+        izz="0.016341" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_arm_urdf/meshes_visual/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_arm_urdf/meshes_collision/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="base_joint" type="fixed">
+    <parent link="world"/>
+    <child link="base_link"/>
+    <origin rpy="0 -1.57 3.14" xyz="0.0 0.0 0.3"/>
+  </joint>
+  <link
+    name="First_link">
+    <inertial>
+      <origin
+        xyz="0.14906 3.2996E-06 -0.024915"
+        rpy="0 0 0" />
+      <mass
+        value="2.4065" />
+      <inertia
+        ixx="0.0043237"
+        ixy="5.4084E-07"
+        ixz="-0.00050669"
+        iyy="0.011248"
+        iyz="3.5482E-07"
+        izz="0.0086664" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_arm_urdf/meshes_visual/First_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_arm_urdf/meshes_collision/First_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="First_joint"
+    type="continuous">
+    <origin
+      xyz="0.06 0 0.19296"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="First_link" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      effort="200"
+      velocity="11.31" />
+  </joint>
+  <link
+    name="Second_link">
+    <inertial>
+      <origin
+        xyz="0.14897 2.5546E-05 -0.024988"
+        rpy="0 0 0" />
+      <mass
+        value="2.4088" />
+      <inertia
+        ixx="0.004332"
+        ixy="3.4625E-06"
+        ixz="-0.00051362"
+        iyy="0.011261"
+        iyz="3.3059E-06"
+        izz="0.0086745" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_arm_urdf/meshes_visual/Second_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_arm_urdf/meshes_collision/Second_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Second_joint"
+    type="continuous">
+    <origin
+      xyz="0.2 0 0.096"
+      rpy="0 0 0" />
+    <parent
+      link="First_link" />
+    <child
+      link="Second_link" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      effort="200"
+      velocity="11.31" />
+  </joint>
+  <link
+    name="Third_link">
+    <inertial>
+      <origin
+        xyz="0.014688 -0.0044423 -0.019667"
+        rpy="0 0 0" />
+      <mass
+        value="0.44316" />
+      <inertia
+        ixx="0.0010381"
+        ixy="0.00011046"
+        ixz="0.00027385"
+        iyy="0.0018937"
+        iyz="-9.9566E-06"
+        izz="0.0013854" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_arm_urdf/meshes_visual/Third_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_arm_urdf/meshes_collision/Third_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Third_joint"
+    type="continuous">
+    <origin
+      xyz="0.2 0 0.096"
+      rpy="0 0 0" />
+    <parent
+      link="Second_link" />
+    <child
+      link="Third_link" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      effort="200"
+      velocity="11.31" />
+  </joint>
+  <link
+    name="End_effector">
+    <inertial>
+      <origin
+        xyz="-0.096708 -5.2767E-11 -0.01"
+        rpy="0 0 0" />
+      <mass
+        value="0.58939" />
+      <inertia
+        ixx="0.0003138"
+        ixy="2.4281E-12"
+        ixz="1.0912E-08"
+        iyy="0.0016307"
+        iyz="2.6044E-13"
+        izz="0.0016307" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_arm_urdf/meshes_visual/End_effector.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_arm_urdf/meshes_collision/End_effector.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Flange"
+    type="fixed">
+    <origin
+      xyz="0.113 0 0.061"
+      rpy="0 0 0" />
+    <parent
+      link="Third_link" />
+    <child
+      link="End_effector" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+
+  <gazebo>
+    <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
+        <robotNamespace></robotNamespace>
+        <robotSimType>gazebo_ros_control/DefaultRobotHWSim</robotSimType>
+        <legacyModeNS>true</legacyModeNS>   
+    </plugin>
+  </gazebo>
+
+  <transmission name="First_link_trans">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="First_joint">
+        <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="First_link_motor">
+        <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+        <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+
+  <transmission name="Second_link_trans">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="Second_joint">
+        <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="Second_link_motor">
+        <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+        <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+
+  <transmission name="Third_link_trans">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="Third_joint">
+        <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="Third_link_motor">
+        <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+        <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+
+  <gazebo reference="First_link">
+        <selfCollide>true</selfCollide>
+  </gazebo>
+  <gazebo reference="Second_link">
+        <selfCollide>true</selfCollide>
+  </gazebo>
+  <gazebo reference="Third_link">
+        <selfCollide>true</selfCollide>
+  </gazebo>
+  <gazebo reference="End_effector">
+        <selfCollide>true</selfCollide>
+  </gazebo>
+
+</robot>
